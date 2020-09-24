@@ -1,0 +1,15 @@
+
+.item{
+    width: 33%;
+    float: left;
+    margin: 0px 0px 35px 0px;
+    text-align: center;
+    padding-top: 20px;
+    height: 300px;
+}
+
+.item:hover{
+    width: 33%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px lightgray;
+}
