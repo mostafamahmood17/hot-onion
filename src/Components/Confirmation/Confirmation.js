@@ -37,7 +37,7 @@ const Confirmation = () => {
     <form className="p-3 border border-danger rounded" onSubmit={handleSubmit(onSubmit)}>
         <h5>Edit Delivery Details</h5>
         <hr width="80%"/>
-      <input className="mb-2" name="example" defaultValue="name" ref={register} />  
+      <input className="mb-2" name="example" defaultValue="name" ref={register} required/>  
  <br/>
       <input className="mb-2" name="544 S austin street" defaultValue="street" ref={register({ required: true })} />
  <br/>
@@ -47,7 +47,7 @@ const Confirmation = () => {
  <br/>
       {errors.exampleRequired && <span>This field is required</span>}
  <br/>
-      <Link to="/checkout"><input className="btn btn-danger" type="submit" value="save and continue" /></Link>
+      <input className="btn btn-danger" type="submit" value="save and continue"/>
     </form>
 
             </div>
@@ -78,21 +78,56 @@ const Confirmation = () => {
                            </div>
                          </div>
                          </div>
-                         <div>
-                          <h3>Subtotal {count}</h3>
-                          <h3>${tPrice}</h3>
-                          <h3>tax</h3>
-                           <h3>${tax}</h3>
-                          <h3>Delivery fee</h3>
-                           <h3>${dFee}</h3>
-                          <h3>total</h3>
-                          <h3>${grandTotal}</h3>
-                         </div>
+                         
+                 <div className="text-left ml-4">
+                     <div className="row">
+                          <div className="col">
+                              <h5>Subtotal</h5>
+                          </div>
+                          <div className="col">
+                              <h5>{count}</h5>
+                          </div>
+                     </div>
+                     <div className="row">
+                          <div className="col">
+                              <h5 >Total</h5>
+                          </div>
+                          <div className="col">
+                              <h5>${tPrice}</h5>
+                          </div>
+                     </div>
+                     <div className="row">
+                          <div className="col">
+                              <h5 >tax</h5>
+                          </div>
+                          <div className="col">
+                              <h5>${tax}</h5>
+                          </div>
+                     </div>
+                     <div className="row">
+                          <div className="col">
+                              <h5>Delivery fee</h5>
+                          </div>
+                          <div className="col">
+                              <h5>${dFee}</h5>
+                          </div>
+                     </div>
+                     <div className="row">
+                          <div className="col">
+                              <h5>Grand total</h5>
+                          </div>
+                          <div className="col">
+                              <h5>${grandTotal}</h5>
+                          </div>
+                     </div>
+                     <Link to="/checkout"><button className="btn btn-danger">Add to Cart</button></Link>
+                 </div>
  
-                </div>
+                     
 
             </div>
         </div>
+    </div>
 
     );
 };

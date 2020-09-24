@@ -13,6 +13,7 @@ import {
 import NotFound from './Components/NotFound/NotFound';
 import Confirmation from './Components/Confirmation/Confirmation';
 import CheckOut from './Components/CheckOut/CheckOut';
+import Login from './Components/Login/Login';
 
 
 export const FoodContext = createContext();
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/confirmation/:id">
          <Confirmation/>
+        </Route>
+        <Route path="/login">
+         <Login/>
         </Route>
         <Route path="/checkout">
          <CheckOut/>
