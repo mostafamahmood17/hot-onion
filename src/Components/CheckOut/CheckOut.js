@@ -5,11 +5,11 @@ const CheckOut = () => {
     return (
         <div className="">
         <div className="row">
-            <div className="col">
+            <div className="col-md-5">
                 <img className="imageMap" src="https://imgur.com/5Cg7q5n.png" alt=""/>
 
             </div>
-            <div className="col ml-5">
+            <div className="col-md-5 ml-5">
                 <div className="bod">
                     <div><img className="imageMoto" src="https://imgur.com/wr8tenL.png" alt=""/></div>
                     <div>
@@ -26,7 +26,7 @@ const CheckOut = () => {
                     <div className="">
                         <div className="row">
                             <img className="imageCus" src="https://imgur.com/fyFi7YZ.png" alt=""/>
-                            <h5 className="ml-3 my-3">Customer Name</h5>
+                            <h5 className="ml-3 ">Customer Name</h5>
                         </div>
                         
                     </div>

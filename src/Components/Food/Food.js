@@ -1,13 +1,14 @@
 import React, {useContext, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { FoodContext } from '../../App';
 import fakeData from '../../fakeData/fakeData';
 // const [selectedItem, setSelectedItem] = useState()
 
 const Food = () => {
     const {id} = useParams();
+    const history = useHistory();
 
-    const [category, setCategory, count, setCount] = useContext(FoodContext)
+    const {category, setCategory, count, setCount} = useContext(FoodContext)
     console.log("count",count)
 
 
@@ -20,6 +21,13 @@ const handleQuantityMinus = () => {
  if(count>1){
      setCount(count-1)
     }else{setCount(count)}
+}
+
+const handlePageChange = () =>{
+  history.push(`/confirmation/${id}`);
+  console.log(history)
+
+
 }
     
     return (
@@ -43,7 +51,7 @@ const handleQuantityMinus = () => {
                   </div>
                   
                 </div>
-                <Link to={`/confirmation/${id}`}><button className="btn btn-danger">add cart</button></Link>
+                <button onClick={handlePageChange} className="btn btn-danger">add cart</button>
 
               </div>
 

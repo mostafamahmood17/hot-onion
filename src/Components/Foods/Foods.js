@@ -12,10 +12,10 @@ const Foods = (props) => {
              <div className="item">
              
                 <img src={image} className="" style={{width:"100px", height:"120px"}} alt="" />
-                  <div className="">
-                     <h5 className="">{name}</h5>
-                     <p className="">{description}</p>
-                     <p className="">$ {price} </p>
+                  <div style={{textDecoration:"none"}} className="">
+                     <h5 style={{textDecoration:"none", color:"red"}} className="">{name}</h5>
+                     <p style={{textDecoration:"none"}}  className="text-dark">{description}</p>
+                     <p className="text-success">$ {price} </p>
                  </div>
             
 

@@ -10,49 +10,54 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+
 import NotFound from './Components/NotFound/NotFound';
 import Confirmation from './Components/Confirmation/Confirmation';
 import CheckOut from './Components/CheckOut/CheckOut';
-import Login from './Components/Login/Login';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Login from './Components/Login/Login'
+
 
 
 export const FoodContext = createContext();
-export const CountContext = createContext();
+
+
 
 function App() {
   const [category, setCategory] = useState(fakeData)
   const [count, setCount] = useState(1)
-    
+  const [loggedInUser, setLoggedInUser] = useState([])
+
   return (
-    <FoodContext.Provider value={[category, setCategory, count, setCount]}>
+    <FoodContext.Provider value={{ category, setCategory, count, setCount, loggedInUser, setLoggedInUser }}>
       <Router>
-        <Navbar/>
-       <Switch> 
-        <Route path="/food/:id">
-        <Food/>
-        </Route>
-        <Route path="foodCategory">
-        <FoodCategory/>
-        </Route>
-        <Route path="/home">
-         <Poster/>
-        </Route>
-        <Route exact path="/">
-         <Poster/>
-        </Route>
-        <Route path="/confirmation/:id">
-         <Confirmation/>
-        </Route>
-        <Route path="/login">
-         <Login/>
-        </Route>
-        <Route path="/checkout">
-         <CheckOut/>
-        </Route>
-        <Router path="*">
-          <NotFound/>
-        </Router>
-       </Switch>
+        <Navbar />
+        <Switch>
+          <Route path="/food/:id">
+            <Food />
+          </Route>
+          <Route path="foodCategory">
+            <FoodCategory />
+          </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
+          <PrivateRoute path="/confirmation/:id">
+            <Confirmation />
+          </PrivateRoute>
+          <PrivateRoute path="/checkout">
+            <CheckOut />
+          </PrivateRoute>
+          <Route path="/home">
+            <Poster />
+          </Route>
+          <Route exact path="/">
+            <Poster />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
       </Router>
     </FoodContext.Provider>
   );

@@ -6,7 +6,7 @@ import "./Confirmation.css"
 
 
 const Confirmation = () => {
-    const [category, setCategory, count, setCount] = useContext(FoodContext)
+    const {category, setCategory, count, setCount} = useContext(FoodContext)
     
      const {id} = useParams();
      const selectedIFood = category.filter(f => f.id == id);
@@ -51,7 +51,7 @@ const Confirmation = () => {
     </form>
 
             </div>
-            <div className="col m-5 text-center">
+            <div className="col ml-2 text-center">
                 <div className="m-5">
                     <h3>From melrose plaza</h3>
                     <h5>estimate arriving time 30 min</h5>
